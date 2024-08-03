@@ -173,7 +173,7 @@ blockquote:before {
 
 .banner-wrap h2 { 
     color: inherit; 
-    font-family: "Rodin"; 
+    font-family: "Rodin-UB"; 
     font-size: 80px; 
     font-weight: 100; 
     line-height: 1.25; 
@@ -1310,8 +1310,10 @@ h2#wsite-com-product-title {
 }
 
 .input_div {
-    padding: 50px 20px;
-    align-self: center;
+    width: 80%;
+    height: 20%;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 @media screen and (max-width: 1200px) {
