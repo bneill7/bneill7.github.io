@@ -161,6 +161,11 @@ blockquote:before {
     background-size: cover; 
 }
 
+.pdf {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+}
+
 .banner-wrap .container { 
     max-width: 1366px; 
     padding: 60px 40px; 
