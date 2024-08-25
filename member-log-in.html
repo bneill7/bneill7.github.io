@@ -315,7 +315,10 @@
 <script type="text/javascript">
 	if(sessionStorage.getItem("PIN") == "[NOPENOPE]")
 	{
-		document.getElementById("login_message").textContent = "Log in to Glynn Academy NHS. It seems as though the last username and password do not exist. Please try again."
+		document.getElementById("login_message").textContent = "Log in to Glynn Academy NHS. \nIt seems as though the last username and password do not exist. Please try again."
+
+		sessionStorage.setItem("PIN", "");
+		sessionStorage.setItem("Password", "");
 	}
 	function saveInformation()
 		{

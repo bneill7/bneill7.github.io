@@ -26,8 +26,8 @@ function login(table)
 {
   console.log("Logging in...");
 
-  const PIN = sessionStorage.getItem("PIN");
-  const password = sessionStorage.getItem("Password");
+  const PIN = toTitleCase(sessionStorage.getItem("PIN"));
+  const password = toTitleCase(sessionStorage.getItem("Password"));
 
   console.log("PIN: " + PIN);
   console.log("password: " + password);
@@ -40,14 +40,12 @@ function login(table)
       {
         console.log("Account found!");
         updateProfile(table[i]);
-      }
-      else
-      {
-        //sessionStorage.setItem("PIN", "[NOPENOPE]");
-        //sessionStorage.setItem("Password", "");
-        //location.replace("member-log-in.html");
+        return;
       }
     } 
+    sessionStorage.setItem("PIN", "[NOPENOPE]");
+    sessionStorage.setItem("Password", "");
+    location.replace("member-log-in.html");
 }
 
 function updateProfile(userInfo)
@@ -79,6 +77,13 @@ function updateProfile(userInfo)
   }
 
   //document.getElementById("dues_display").textContent = duesOwed;
+}
+
+function toTitleCase(str) {
+  if(!str) {
+    return "";
+  }
+  return str.toLowerCase().replace(/\b\w/g, s => s.toUpperCase());
 }
 //fetch and display the data when the page loads
 window.onload = fetchSheetData();
