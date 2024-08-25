@@ -1,10 +1,10 @@
 const hoursCounter = document.getElementById("hours_counter");
 
 //Google Sheets update
-const API_KEY = 'AIzaSyBO4X460r8emzoIR1cBsaap9c-grtSWp8Q';
-const SHEET_ID = '1VqlpDEA1XmioQPW1eM-xFyWLsEYUkuRMDyilp2ehT8Y';
+const API_KEY = 'AIzaSyBPWyQbAwL5AUWZVhAATQv7cA284rFTsw0';
+const SHEET_ID = '1ZWKIf6ResLpZHFr5PpgTdoWWog2dga7DkzogH4wyX10';
 const numberOfMembers = 2
-const RANGE = 'Sheet1!A1:F' + (numberOfMembers + 1);
+const RANGE = 'Sheet1!A1:C112';
 
 async function fetchSheetData()
 {
@@ -54,10 +54,10 @@ function updateProfile(userInfo)
 {
   console.log("User Info: " + userInfo);
 
-  const firstName = userInfo[2];
-  const lastName = userInfo[3];
-  const hours = userInfo[4];
-  const duesOwed = userInfo[5];
+  const firstName = userInfo[0];
+  const lastName = userInfo[1];
+  const hours = userInfo[2];
+  //const duesOwed = userInfo[5];
   
   const semesterCountdown_text = document.getElementById("semester_countdown");
   hoursCounter.textContent = hours;
@@ -78,7 +78,7 @@ function updateProfile(userInfo)
     document.getElementById("year_countdown").textContent = "no";
   }
 
-  document.getElementById("dues_display").textContent = duesOwed;
+  //document.getElementById("dues_display").textContent = duesOwed;
 }
 //fetch and display the data when the page loads
 window.onload = fetchSheetData();
