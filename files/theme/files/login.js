@@ -26,8 +26,8 @@ function login(table)
 {
   console.log("Logging in...");
 
-  const PIN = toTitleCase(sessionStorage.getItem("PIN"));
-  const password = toTitleCase(sessionStorage.getItem("Password"));
+  const PIN = toTitleCase(sessionStorage.getItem("PIN").replaceAll(" ", ''));
+  const password = toTitleCase(sessionStorage.getItem("Password").replaceAll(" ", ""));
 
   console.log("PIN: " + PIN);
   console.log("password: " + password);
@@ -36,7 +36,7 @@ function login(table)
   for(var i = 0; i < table.length; i++)
     {
       console.log(i);
-      if(table[i][0] == PIN && table[i][1] == password)
+      if(toTitleCase(table[i][0].replaceAll(" ", "")) == PIN && toTitleCase(table[i][1].replaceAll(" ", "")) == password)
       {
         console.log("Account found!");
         updateProfile(table[i]);
