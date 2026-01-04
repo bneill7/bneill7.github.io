@@ -45,6 +45,7 @@ function login(table)
   for(var i = 0; i < table.length; i++)
     {
       console.log(i);
+      if(table[i][0] == undefined || table[i][1] == undefined || table[i][2] == undefined) continue;
       if(toTitleCase(table[i][0].replaceAll(" ", "")) == PIN && toTitleCase(table[i][1].replaceAll(" ", "")) == password)
       {
         console.log("Account found!");
